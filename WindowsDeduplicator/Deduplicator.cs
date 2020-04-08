@@ -21,6 +21,11 @@ namespace WindowsDeduplicator
                 throw new ArgumentNullException("rootPath must not be null or empty.");
             }
 
+            if (!Directory.Exists(rootPath))
+            {
+                throw new ArgumentException($"Directory {rootPath} does not exist.");
+            }
+
             RootPath = rootPath;
         }
 
